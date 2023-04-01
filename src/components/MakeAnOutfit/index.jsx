@@ -17,7 +17,7 @@ export default function MakeAnOutfit() {
             <div className="shirt-container">
                 <div className="add-shirt-container">
                     <Button onClick={handleShirtFormClick}>
-                        Add Shirt
+                        {showShirtForm ? 'Add Shirt' : 'Hide Form'}
                     </Button>
                     {showShirtForm ? null : <Form>
                         <Form.Field width={4}>
@@ -32,7 +32,7 @@ export default function MakeAnOutfit() {
             <div className="pants-container">
                 <div className="add-pants-container">
                     <Button onClick={handlePantsFormClick}>
-                        Add Pants
+                        {showPantsForm ? 'Add Pants' : 'Hide Form'}
                     </Button>
                     {showPantsForm ? null : <Form>
                         <Form.Field width={4}>
