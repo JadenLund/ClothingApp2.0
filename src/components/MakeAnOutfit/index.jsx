@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Button, Form, Icon } from "semantic-ui-react"
+import Shirts from "./Shirts"
+import Pants from "./Pants"
 export default function MakeAnOutfit() {
     const [showShirtForm, setShowShirtForm] = useState(true)
     const [showPantsForm, setShowPantsForm] = useState(true)
@@ -25,9 +27,7 @@ export default function MakeAnOutfit() {
                         <Button type='submit'>Submit</Button>
                     </Form>}
                 </div>
-                <Icon name='arrow left' />
-                <div>Shirts Image Container</div>
-                <Icon name='arrow right' />
+                <Shirts />
             </div>
             <div className="pants-container">
                 <div className="add-pants-container">
@@ -42,9 +42,7 @@ export default function MakeAnOutfit() {
                         <Button type='submit'>Submit</Button>
                     </Form>}
                 </div>
-                <Icon name='arrow left' />
-                <div>Pants Image Container</div>
-                <Icon name='arrow right' />
+                <Pants />
             </div>
         </>
     )
