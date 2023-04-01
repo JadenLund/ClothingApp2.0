@@ -1,3 +1,4 @@
+import './index.scss'
 import { Icon } from "semantic-ui-react"
 export default function Pants() {
     return (<div className="pants-display">

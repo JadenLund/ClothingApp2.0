@@ -1,3 +1,4 @@
+import './index.scss'
 import { Icon } from "semantic-ui-react"
 export default function Shirts() {
     return (<div className="shirt-display">

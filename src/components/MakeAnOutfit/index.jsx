@@ -1,3 +1,4 @@
+import './index.scss'
 import { useState } from "react"
 import { Button, Form, Icon } from "semantic-ui-react"
 import Shirts from "./Shirts"
