@@ -8,9 +8,8 @@ export default function Home() {
         <>
 
             <Image src={banner} size='massive' centered />
+            {/* <Test /> */}
             <Styles />
-            <Test />
-
         </>
     )
 }

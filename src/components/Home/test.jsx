@@ -2,8 +2,9 @@ import React from 'react';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import 'react-horizontal-scrolling-menu/dist/styles.css';
 import { Icon } from 'semantic-ui-react';
+import Styles from './styles';
 const getItems = () =>
-    Array(20)
+    Array(5)
         .fill(0)
         .map((_, ind) => ({ id: `element-${ind}` }));
 
@@ -29,7 +30,7 @@ function Test() {
     return (
         <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
             {items.map(({ id }) => (
-                <Card
+                <Styles
                     itemId={id} // NOTE: itemId is required for track items
                     title={id}
                     key={id}
@@ -42,45 +43,13 @@ function Test() {
 }
 
 function LeftArrow() {
-    const { isFirstItemVisible, scrollPrev } =
-        React.useContext(VisibilityContext);
-
-    return (
-        <Icon name="angle left" onClick={() => scrollPrev()} disabled={isFirstItemVisible} />
-    );
+    const { isFirstItemVisible, scrollPrev } = React.useContext(VisibilityContext);
+    return <Icon name="angle left" onClick={() => scrollPrev()} disabled={isFirstItemVisible} />
 }
 
 function RightArrow() {
     const { isLastItemVisible, scrollNext } = React.useContext(VisibilityContext);
-
-    return (
-        <Icon name="angle right" disabled={isLastItemVisible} onClick={() => scrollNext()} />
-    );
-}
-
-function Card({ onClick, selected, title, itemId }) {
-    const visibility = React.useContext(VisibilityContext);
-
-    return (
-        <div
-            onClick={() => onClick(visibility)}
-            style={{
-                width: '160px',
-            }}
-            tabIndex={0}
-        >
-            <div className="card">
-                <div>{title}</div>
-                <div>visible: {JSON.stringify(!!visibility.isItemVisible(itemId))}</div>
-                <div>selected: {JSON.stringify(!!selected)}</div>
-            </div>
-            <div
-                style={{
-                    height: '200px',
-                }}
-            />
-        </div>
-    );
+    return <Icon name="angle right" disabled={isLastItemVisible} onClick={() => scrollNext()} />
 }
 
 export default Test;
