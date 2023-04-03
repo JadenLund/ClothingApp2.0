@@ -1,5 +1,6 @@
 import { Header, Image } from "semantic-ui-react"
 import AboutBanner from '../../assets/Images/AboutBanner.png'
+
 export default function About() {
     return (
         <>
